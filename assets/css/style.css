@@ -376,7 +376,7 @@ body { background: var(--white); }
 
 .hero {
  
-  background-image: url("../images/WhatsApp\ Image\ 2023-10-13\ at\ 17.27.09.jpeg");
+  background-image: url(/assets/images/WhatsApp\ Image\ 2023-10-13\ at\ 17.27.09.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -387,6 +387,12 @@ body { background: var(--white); }
   min-height: 600px;
   text-align: center;
   padding-top: 125px;
+}
+
+.logoHero{
+  width: 250px;
+  height: 250px;
+  display: flex;
 }
 
 
@@ -439,12 +445,17 @@ iframe {
 
 
 
-.hero-title { margin-bottom: 20px; }
+.hero-title { 
+  margin-bottom: 20px; 
+  padding: 5%;
+}
 
 .hero-text {
   color: var(--white);
-  font-size: var(--fs-5);
-  margin-bottom: 40px;
+  font-size: 20px;
+  padding: 7%;
+  /* margin-bottom: 40px; */
+
 }
 
 .btn-group {
@@ -971,6 +982,7 @@ address {
   .hero-text { --fs-5: 15px; }
 
   .btn-group { gap: 20px; }
+  
 
 
 
