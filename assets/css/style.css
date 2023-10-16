@@ -375,7 +375,8 @@ body { background: var(--white); }
 \*-----------------------------------*/
 
 .hero {
-  background-image: url("../images/hero-banner.jpg");
+ 
+  background-image: url("../images/WhatsApp\ Image\ 2023-10-13\ at\ 17.27.09.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -387,6 +388,56 @@ body { background: var(--white); }
   text-align: center;
   padding-top: 125px;
 }
+
+
+
+/* .video-container{
+  width: 100vw;
+  height: 100vh;
+}
+    
+iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+.video-background {
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0%;
+  right: 10%;
+  bottom: 0;
+  left: 0;
+  
+  z-index: -99;
+
+} */
+
+.bg-video {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background: no-repeat center;
+  margin-left: 50vw;
+  user-select: none;
+  pointer-events: none;
+
+  /*custom styles, for example grayscale appearance*/
+  filter: grayscale(0.8);
+
+  /*additional tweaks for positioning, read more in the link above*/
+  height: 100%;
+  width: 177.77777778vh; /* 100 * 16 / 9 */
+  min-width: 100%;
+  min-height: 56.25vw; /* 100 * 9 / 16 */
+}
+
+
 
 .hero-title { margin-bottom: 20px; }
 
@@ -653,6 +704,9 @@ body { background: var(--white); }
   height: 100%;
   border-radius: var(--radius-15);
   overflow: hidden;
+}
+.gallerypt2{
+  padding: 5%;
 }
 
 .gallery-item:nth-child(3) { grid-area: 1 / 2 / 3 / 3; }
