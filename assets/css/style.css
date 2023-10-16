@@ -223,7 +223,7 @@ body { background: var(--white); }
   left: 0;
   width: 100%;
   transition: var(--transition);
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+ 
   padding-block: 15px;
   z-index: 1;
 }
@@ -271,7 +271,7 @@ body { background: var(--white); }
 
 .search-btn { font-size: 20px; }
 
-.header-bottom { border-bottom: 1px solid hsla(0, 0%, 100%, 0.1); }
+/* .header-bottom { border-bottom: 1px solid hsla(0, 0%, 100%, 0.1); } */
 
 .header-bottom .container {
   display: flex;
@@ -376,14 +376,14 @@ body { background: var(--white); }
 
 .hero {
  
-  background-image: url(/assets/images/surTrip19:6.jpeg);
+  background-image: url(/assets/images/peuAluna.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-color: hsla(0, 0%, 0%, 0.7);
   background-blend-mode: overlay;
   display: grid;
-  place-items: center;
+  /* place-items: center; */
   min-height: 600px;
   text-align: center;
   padding-top: 125px;
