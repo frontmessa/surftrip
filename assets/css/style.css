@@ -528,7 +528,7 @@ iframe {
 
 .popular-card .card-content {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   left: 20px;
   right: 20px;
   background: var(--white);
