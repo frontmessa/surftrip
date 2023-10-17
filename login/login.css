@@ -3,6 +3,19 @@
 .forgotPassword{
     color: black;
 }
+.hero1{
+background-image: url(/assets/images/surf_didi.jpeg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-color: hsla(0, 0%, 0%, 0.7);
+background-blend-mode: overlay;
+display: grid;
+/* place-items: center; */
+min-height: 850px;
+text-align: center;
+padding-top: 125px;
+}
 
 
 
@@ -473,10 +486,10 @@ body{
 }
 
 main{
+    background-image: url(../assets/images/surf_didi.jpeg);
     width: 100%;
-    padding: 20px;
     margin: auto;
-    margin-top: 100px;
+   
 }
 
 .contenedor__todo{
@@ -604,7 +617,7 @@ main{
 @media screen and (max-width: 850px){
 
     main{
-        margin-top: 50px;
+        margin-top: 0px;
     }
 
     .caja__trasera{

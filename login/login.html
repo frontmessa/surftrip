@@ -6,71 +6,201 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Surf Freedom</title>
 
-  <!-- 
-    - faviconn
+
+  <!-- - faviconn
   -->
-  <!-- <link rel="shortcut icon" href="../assets/images/logopng_freedomSurf .png" type="image/svg+xml"> -->
+  <link rel="shortcut icon" href="../assets/images/logopng_freedomSurf .png" type="image/svg+xml">
 
 
   <!-- links -->
   <link rel="stylesheet" href="login.css">
   <link rel="stylesheet" href="/assets/css/style.css">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 
-  </head>
+</head>
 
-<body>
 
-  <main>
+<!-- 
+    - #HEADER
+  -->
 
-    <div class="contenedor__todo">
-      <div class="caja__trasera">
-        <div class="caja__trasera-login">
-          <h3>já tem conta?</h3>
-          <p>Inicia sessão para prosseguir</p>
-          <button id="btn__iniciar-sesion">Iniciar sessão</button>
-        </div>
-        <div class="caja__trasera-register">
-          <h3>Ainda não tem conta?</h3>
-          <p>Registre-se para iniciar a sessão</p>
-          <button id="btn__registrarse">Registre-se</button>
-        </div>
-      </div>
+  <header class="header" data-header>
 
-      <!--Formulario de Login y registro-->
-      <div class="contenedor__login-register">
-        <!--Login-->
-        <form action="" class="formulario__login">
-          <h2>Iniciar sessão</h2>
-          <input type="text" placeholder="e-mail">
-          <input type="password" placeholder="senha">
-          <div >
-            <a class="forgotPassword" href="#">Esqueci minha senha</a>
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="tel:+01123456790" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
           </div>
-          <button>Entrar</button>
-          
-        </form>
 
-        <!--Register-->
-        <form action="" class="formulario__register">
-          <h2>Registre-se</h2>
-          <input type="text" placeholder="Nome completo">
-          <input type="text" placeholder="e-mail">
-          <input type="text" placeholder="numero de  celular">
-          <input type="password" placeholder="senha">
-          <input type="password" placeholder="repita a senha">
-          <button>confirmar registro</button>
-        </form>
+          <div class="wrapper">
+            <p class="helpline-title">Entre Em Contato :</p>
+
+            <p class="helpline-number">(12)0000000</p>
+          </div>
+
+        </a>
+        <!-- first logo -->
+        <a href="#" class="logo">
+          <img src="./assets/images/logoheader_freedomSurf (1).png" alt="Tourly logo">
+        </a>
+
+        <div class="header-btn-group">
+
+          <!-- <button class="search-btn" aria-label="Search">
+            <ion-icon name="search"></ion-icon>
+          </button> -->
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
       </div>
     </div>
 
-  </main>
+    <div class="header-bottom">
+      <div class="container">
 
-  <script src="./login.js"></script>
-</body>
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="./assets/images/logo_freedomSurf.png" alt="logo freedom">
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+
+            <li>
+              <a href="#home" class="navbar-link" data-nav-link>home</a>
+            </li>
+
+            <li>
+              <a href="#destination" class="navbar-link" data-nav-link>nossos prós</a>
+            </li>
+
+            <li>
+              <a href="#package" class="navbar-link" data-nav-link>Pacotes</a>
+            </li>
+
+            <li>
+              <a href="#gallery" class="navbar-link" data-nav-link>Galeria</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="navbar-link" data-nav-link>Entre em contato</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        <button class="btn btn-primary">login</button>
+     
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero1 " id="home">
+
+        <div class="contenedor__todo">
+          <div class="caja__trasera">
+            <div class="caja__trasera-login">
+              <h3>já tem conta?</h3>
+              <p>Inicia sessão para prosseguir</p>
+              <button id="btn__iniciar-sesion">Iniciar sessão</button>
+            </div>
+            <div class="caja__trasera-register">
+              <h3>Ainda não tem conta?</h3>
+              <p>Registre-se para iniciar a sessão</p>
+              <button id="btn__registrarse">Registre-se</button>
+            </div>
+          </div>
+    
+          <!--Formulario de Login y registro-->
+          <div class="contenedor__login-register">
+            <!--Login-->
+            <form action="" class="formulario__login">
+              <h2>Iniciar sessão</h2>
+              <input type="text" placeholder="e-mail">
+              <input type="password" placeholder="senha">
+              <div>
+                <a class="forgotPassword" href="#">Esqueci minha senha</a>
+              </div>
+              <button>Entrar</button>
+    
+            </form>
+    
+            <!--Register-->
+            <form action="" class="formulario__register">
+              <h2>Registre-se</h2>
+              <input type="text" placeholder="Nome completo">
+              <input type="text" placeholder="e-mail">
+              <input type="text" placeholder="numero de  celular">
+              <input type="password" placeholder="senha">
+              <input type="password" placeholder="repita a senha">
+              <button>confirmar registro</button>
+            </form>
+          </div>
+        </div>
+    
+      </main>
+    
+      <script src="./login.js"></script>
+      <script src="../assets/js/script.js"></script>
+    </body>
+
+        </div>
+      </section>
+
+
+
+    
 
 </html>
-
