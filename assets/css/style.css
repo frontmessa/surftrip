@@ -93,7 +93,11 @@
 
 li { list-style: none; }
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none;
+  color: white;
+
+}
 
 a,
 img,
@@ -102,6 +106,7 @@ input,
 label,
 button,
 ion-icon { display: block; }
+
 
 input,
 button {
@@ -121,7 +126,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body { background: var(--white); }
+/* body { background: var(--white); } */
 
 
 
