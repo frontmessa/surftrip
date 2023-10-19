@@ -589,6 +589,10 @@ iframe {
  * #PACKAGE
 \*-----------------------------------*/
 
+.txt_instrutores{
+  color: black;
+}
+
 .package { padding-block: var(--section-padding); }
 
 .package-list { margin-bottom: 40px; }
