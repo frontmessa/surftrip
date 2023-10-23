@@ -13,13 +13,13 @@
             <td>Telefone</td>
             <td>Email</td>
         </tr>
-        <% for(let i=0; i<registros.length; i++) { %>
+        <% data.forEach((item)=> { %>
             <tr>
-                <td><%= registros[i].nome %></td>
-                <td><%= registros[i].telefone %></td>
-                <td><%= registros[i].email %></td>
+                <td><%= item.nome %></td>
+                <td><%= item.telefone %></td>
+                <td><%= item.email %></td>
             </tr>
-        <% } %>
+        <% }); %>
     </table>
 </body>
 </html>
