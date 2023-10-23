@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Tabela </h2>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Telefone</td>
+            <td>Email</td>
+        </tr>
+        <% for(let i=0; i<registros.length; i++) { %>
+            <tr>
+                <td><%= registros[i].nome %></td>
+                <td><%= registros[i].telefone %></td>
+                <td><%= registros[i].email %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
