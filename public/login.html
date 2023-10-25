@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Design by foolishdeveloper.com -->
-    <title>Glassmorphism login Form Tutorial in html css</title>
+    <title>freedomLogin</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -17,23 +17,19 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(./assets/images/surf_didi.jpeg);
+    background-image: url(./assets/images/surf_tuty.jpeg);
 }
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
-.background .shape{
+
+/* .background{
+    
+} */
+/* .background .shape{
     height: 200px;
     width: 200px;
     position: absolute;
     border-radius: 50%;
-}
-.shape:first-child{
+} */
+/* .shape:first-child{
     background: linear-gradient(
         #1845ad,
         #23a2f6
@@ -49,8 +45,9 @@ body{
     );
     right: -30px;
     bottom: -80px;
-}
+} */
 form{
+    
     height: 520px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
@@ -66,7 +63,7 @@ form{
 }
 form *{
     font-family: 'Poppins',sans-serif;
-    color: #ffffff;
+    color: #060505;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
@@ -135,9 +132,9 @@ button{
     </style>
 </head>
 <body>
-    
+    <section class="background">
     <form>
-        <h3>Login Here</h3>
+        <h3>Login </h3>
 
         <label for="username">Username</label>
         <input type="text" placeholder="Email or Phone" id="username">
@@ -146,10 +143,11 @@ button{
         <input type="password" placeholder="Password" id="password">
 
         <button>Log In</button>
-        <div class="social">
+        <!-- <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-        </div>
+        </div> -->
     </form>
+</section>
 </body>
 </html>
