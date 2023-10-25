@@ -365,7 +365,7 @@ html {
 
 .hero {
  
-  background-image: url(/assets/images/peuAluna.jpeg);
+  background-image: url(./assets/images/peuAluna.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
