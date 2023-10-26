@@ -704,20 +704,17 @@
             <input type="text" name="nome" class="input-field" placeholder="Nome" required>
             <input type="text" name="telefone" class="input-field" placeholder="Telefone" required>
             <input type="email" name="email" class="input-field" placeholder="Email" required>
-            <button type="submit" class="btn btn-secondary">Subscribe</button>
+            <button type="submit" class="btn btn-secondary" id="open-modal">Subscribe</button>
         </form>
         <div id="myModal" class="modal">
-          <div class="modal-content">
+          <div id="fade"></div>
+            <div id="modal" class="modal-content">
               <div class="modal-header">
-                  <span class="close">&times;</span>
                   <h2>Modal Header</h2>
               </div>
               <div class="modal-body">
                   <p>Some text in the Modal Body</p>
                   <p>Some other text...</p>
-              </div>
-              <div class="modal-footer">
-                  <h3>Modal Footer</h3>
               </div>
           </div>
       </div>

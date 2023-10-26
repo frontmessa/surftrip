@@ -1,8 +1,19 @@
 const { Router } = require("express");
-const controller = require('./controller.js');
+const {
+  getRegistros,
+  cadastrarUsuario,
+  login,
+  criandoAcesso,
+} = require("./controller.js");
 
 const router = Router();
 
-router.get("/", controller.getRegistros);
+rotas.post("/login", login);
+
+router.get("/", getRegistros);
+
+router.post("/usuario", cadastrarUsuario);
+
+router.post("/criadoAcesso", criandoAcesso);
 
 module.exports = router;
