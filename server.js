@@ -1,8 +1,7 @@
 const express = require("express");
-const pool = require("./db.js");
-const registrosRoutes = require("./routes.js");
-const path = require("path");
-const jwt = require("jsonwebtoken");
+const registrosRoutes = require("./rotas.js");
+const ejs = require("ejs");
+const verificarUsuarioLogado = require("./autentificacao.js");
 
 const app = express();
 
@@ -17,8 +16,18 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.post("/", receberNovidadeCliente);
+app.get("/login", function (req, res) {
+  res.sendFile(__dirname + "/public/login.html");
+});
 
-app.use("/registros", registrosRoutes);
+app.get("/registros", verificarUsuarioLogado, (req, res) => {
+  res.sendFile(path.join(__dirname, "tabela.ejs"));
+});
+
+app.get("/acesso", function (req, res) {
+  res.sendFile(__dirname + "/public/criandoAcesso.html");
+});
+
+app.use(registrosRoutes);
 
 app.listen(5505);

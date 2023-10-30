@@ -23,7 +23,7 @@
         box-sizing: border-box;
       }
       body {
-        background-image: url(./assets/images/surf_tuty.jpeg);
+        background-image: url(./assets/images/surf_hizu.jpeg);
       }
 
       /* .background{
@@ -138,25 +138,19 @@
   <body>
     <section class="background">
       <form id="loginForm">
-        <h3>Login</h3>
+        <h3>Registro</h3>
 
-        <label for="username">Username</label>
+        <label for="nome">name</label>
         <input type="text" placeholder="Email or Phone" id="username" />
 
-        <label for="password">Password</label>
+        <label for="email">email</label>
+        <input type="text" placeholder="Email or Phone" id="username" />
+
+        <label for="senha">Password</label>
         <input type="password" placeholder="Password" id="password" />
 
         <button type="submit">Log In</button>
       </form>
-
-      <script>
-        document
-          .getElementById("loginForm")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-            window.location.href = "/registros";
-          });
-      </script>
     </section>
   </body>
 </html>
