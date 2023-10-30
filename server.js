@@ -20,9 +20,9 @@ app.get("/login", function (req, res) {
   res.sendFile(__dirname + "/public/login.html");
 });
 
-app.get("/registros", verificarUsuarioLogado, (req, res) => {
-  res.sendFile(path.join(__dirname, "tabela.ejs"));
-});
+// app.get("/registros", (req, res) => {
+//   res.sendFile(path.join(__dirname, "tabela.ejs"));
+// });
 
 app.get("/acesso", function (req, res) {
   res.sendFile(__dirname + "/public/criandoAcesso.html");
