@@ -56,8 +56,9 @@ const criandoAcesso = async (req, res) => {
     const senhaCriptografada = await bcrypt.hash(senha, 10);
 
     const resultado = await pool.query(
-      "INSERT INTO login (nome, email, senha) VALUES ($1, $2, $3)",
-      [nome, email, senhaCriptografada]
+      "INSERT INTO login (nome, email, senha) VALUES ($1, $2, $3) return *",
+      [nome, email, senhaCriptografada],
+      console.log(resultado)
     );
     res.sendFile(path.join(__dirname, "public/criandoAcesso.html"));
   } catch (error) {
