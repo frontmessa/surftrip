@@ -708,15 +708,38 @@
             <input type="email" name="email" class="input-field" placeholder="Email" required>
             <button type="submit" class="btn btn-secondary" id="open-modal">Subscribe</button>
         </form>
-        <div id="myModal" class="modal">
-          <div id="fade"></div>
-            <div id="modal" class="modal-content">
+
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+          <div class="modal-header">
+            <h2>Este é o Modal</h2>
+            <button id="close-modal">Fechar</button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, quam?
+              Quas accusantium id cupiditate iste veritatis repudiandae odio dolore
+              voluptas. Eum, deserunt quod. Sit similique laudantium assumenda
+              repellat vel necessitatibus.
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius alias
+              voluptate doloremque, totam inventore autem quis non error! Earum
+              ullam fuga, officiis voluptates pariatur unde et adipisci ducimus non
+              obcaecati.
+            </p>
+          </div>
+        <!-- <div id="myModal" class="modal">
+          <div class="modal-content">
               <div class="modal-header">
                   <h2>Modal Header</h2>
               </div>
               <div class="modal-body">
                   <p>Some text in the Modal Body</p>
                   <p>Some other text...</p>
+              </div>
+              <div class="modal-footer">
+                  <h3>Modal Footer</h3>
               </div>
           </div>
       </div>
@@ -734,7 +757,7 @@
           &copy; 2023 <a href="">Surf For Freedom</a>. All rights reserved
         </p>
 
-        <!-- <ul class="footer-bottom-list">
+        <ul class="footer-bottom-list">
 
           <li>
             <a href="#" class="footer-bottom-link">Privacy Policy</a>
@@ -748,7 +771,7 @@
             <a href="#" class="footer-bottom-link">FAQ</a>
           </li>
 
-        </ul> -->
+        </ul>
 
       </div>
     </div>
