@@ -5,6 +5,8 @@ const senhaJwt = require("./senhaJwt");
 const path = require("path");
 const { error } = require("console");
 
+
+
 const getRegistros = (req, res) => {
   pool.query(
     "SELECT nome, telefone, email FROM registros",
