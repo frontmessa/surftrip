@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const senhaJwt = require("./senhaJwt");
 const path = require("path");
+const { error } = require("console");
 
 const getRegistros = (req, res) => {
   pool.query(
@@ -24,10 +25,10 @@ const login = async (req, res) => {
     res.sendFile(path.join(__dirname, "public/login.html"));
 
     if (usuario.rowCount < 1) {
-      return res.json({ mensagem: "Email ou senha invalida" });
+      return res.send({ mensagem: "Email ou senha invalida" });
     }
 
-    const senhaValida = await bcrypt.compare(senha, login.senha);
+    const senhaValida = await bcrypt.compare(senha, usuario.rows[0].senha);
 
     if (!senhaValida) {
       return res.send({ mensagem: "Email ou senha invalida" });
@@ -41,7 +42,7 @@ const login = async (req, res) => {
 
     return res.json({ usuario: usuarioLogado, token });
 
-    req.usuarioId = decoded.id;
+    //req.usuarioId = decoded.id;
     next();
   } catch (error) {
     return res.send(error.message);
@@ -55,12 +56,13 @@ const criandoAcesso = async (req, res) => {
     const senhaCriptografada = await bcrypt.hash(senha, 10);
 
     const resultado = await pool.query(
-      "insert into login (nome, email, senha) values ($1, $2, $3) returning *",
-      [nome, email, senhaCriptografada]
+      "INSERT INTO login (nome, email, senha) VALUES ($1, $2, $3)",
+      [nome, email, senhaCriptografada],
+      res.send(resultado)
     );
-    return res.sendFile(path.join(__dirname, "public/criandoAcesso.html"));
+    res.sendFile(path.join(__dirname, "public/criandoAcesso.html"));
   } catch (error) {
-    return res.send.json({ mensagem: "Erro interno do servidor" });
+    return res.send({ mensagem: "Erro interno do servidor" });
   }
 };
 const cadastroCliente = async (req, res) => {

@@ -2,7 +2,7 @@ const express = require("express");
 const registrosRoutes = require("./rotas.js");
 const ejs = require("ejs");
 const verificarUsuarioLogado = require("./autentificacao.js");
-
+const path = require("path");
 const app = express();
 
 app.set("view engine", "ejs");
@@ -20,9 +20,9 @@ app.get("/login", function (req, res) {
   res.sendFile(__dirname + "/public/login.html");
 });
 
-app.get("/registros", verificarUsuarioLogado, (req, res) => {
-  res.sendFile(path.join(__dirname, "tabela.ejs"));
-});
+// app.get("/registros", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./views/tabela.ejs"));
+// });
 
 app.get("/acesso", function (req, res) {
   res.sendFile(__dirname + "/public/criandoAcesso.html");
