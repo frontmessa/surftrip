@@ -57,8 +57,7 @@ const criandoAcesso = async (req, res) => {
 
     const resultado = await pool.query(
       "INSERT INTO login (nome, email, senha) VALUES ($1, $2, $3)",
-      [nome, email, senhaCriptografada],
-      res.send(resultado)
+      [nome, email, senhaCriptografada]
     );
     res.sendFile(path.join(__dirname, "public/criandoAcesso.html"));
   } catch (error) {
