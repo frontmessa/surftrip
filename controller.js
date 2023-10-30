@@ -5,9 +5,11 @@ const senhaJwt = require("./senhaJwt");
 const path = require("path");
 const { error } = require("console");
 
+
+
 const getRegistros = (req, res) => {
   pool.query(
-    "SELECT nome, telefone, email FROM registros",
+    "SELECT nome, telefone, email, idade FROM registros",
     (error, results) => {
       if (error) throw error;
       res.render("dash", { data: results.rows });
@@ -42,7 +44,7 @@ const login = async (req, res) => {
 
     return res.json({ usuario: usuarioLogado, token });
 
-    //req.usuarioId = decoded.id;
+    
     next();
   } catch (error) {
     return res.send(error.message);
@@ -66,12 +68,12 @@ const criandoAcesso = async (req, res) => {
   }
 };
 const cadastroCliente = async (req, res) => {
-  const { nome, telefone, email } = req.body;
+  const { nome, telefone, email, idade} = req.body;
 
   try {
     const resultado = await pool.query(
-      "INSERT INTO registros (nome, telefone, email) VALUES ($1, $2, $3)",
-      [nome, telefone, email]
+      "INSERT INTO registros (nome, telefone, email, idade) VALUES ($1, $2, $3, $4)",
+      [nome, telefone, email, idade]
     );
     res.sendFile(path.join(__dirname, "public/index.html"));
   } catch (error) {
