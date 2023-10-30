@@ -2,6 +2,7 @@ const pool = require("./db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const senhaJwt = require("./senhaJwt");
+const path = require("path");
 
 const getRegistros = (req, res) => {
   pool.query(
@@ -26,10 +27,10 @@ const login = async (req, res) => {
       return res.json({ mensagem: "Email ou senha invalida" });
     }
 
-    const senhaValida = await bcrypt.compare(senha, usuario.rows[0].senha);
+    const senhaValida = await bcrypt.compare(senha, login.senha);
 
     if (!senhaValida) {
-      return res.send.json({ mensagem: "Email ou senha invalida" });
+      return res.send({ mensagem: "Email ou senha invalida" });
     }
 
     const token = jwt.sign({ id: usuario.rows[0].id }, senhaJwt, {
@@ -43,7 +44,7 @@ const login = async (req, res) => {
     req.usuarioId = decoded.id;
     next();
   } catch (error) {
-    return res.send.json({ mensagem: "Erro interno do servidor" });
+    return res.send(error.message);
   }
 };
 
