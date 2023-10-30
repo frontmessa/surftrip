@@ -20,6 +20,10 @@ app.get("/login", function (req, res) {
   res.sendFile(__dirname + "/public/login.html");
 });
 
+// rotas.get("/criadoAcesso", function (req, res) {
+//   res.sendFile(__dirname + "/view/dash.ejs");
+// });
+
 // app.get("/registros", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./views/tabela.ejs"));
 // });
