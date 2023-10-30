@@ -10,7 +10,7 @@ const getRegistros = (req, res) => {
     "SELECT nome, telefone, email FROM registros",
     (error, results) => {
       if (error) throw error;
-      res.render("tabela", { data: results.rows });
+      res.render("dash", { data: results.rows });
     }
   );
 };
