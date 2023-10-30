@@ -18,37 +18,37 @@ const getRegistros = (req, res) => {
 };
 
 const login = async (req, res) => {
-  console.log(req)
+  const { email, senha } = req.body;
 
-//   try {
-//     const usuario = await pool.query("select * from login where email = $1", [
-//       email,
-//     ]);
-//     res.sendFile(path.join(__dirname, "public/login.html"));
+  try {
+    const usuario = await pool.query("select * from login where email = $1", [
+      email,
+    ]);
+    res.sendFile(path.join(__dirname, "public/login.html"));
 
-//     if (usuario.rowCount < 1) {
-//       return res.send({ mensagem: "Email ou senha invalida" });
-//     }
+    if (usuario.rowCount < 1) {
+      return res.send({ mensagem: "Email ou senha invalida" });
+    }
 
-//     const senhaValida = await bcrypt.compare(senha, usuario.rows[0].senha);
+    const senhaValida = await bcrypt.compare(senha, usuario.rows[0].senha);
 
-//     if (!senhaValida) {
-//       return res.send({ mensagem: "Email ou senha invalida" });
-//     }
+    if (!senhaValida) {
+      return res.send({ mensagem: "Email ou senha invalida" });
+    }
 
-//     const token = jwt.sign({ id: usuario.rows[0].id }, senhaJwt, {
-//       expiresIn: "8h",
-//     });
+    const token = jwt.sign({ id: usuario.rows[0].id }, senhaJwt, {
+      expiresIn: "8h",
+    });
 
-//     const { senha: _, ...usuarioLogado } = usuario.rows[0];
+    const { senha: _, ...usuarioLogado } = usuario.rows[0];
 
-//     return res.json({ usuario: usuarioLogado, token });
+    return res.json({ usuario: usuarioLogado, token });
 
     
-//     next();
-//   } catch (error) {
-//     return res.send(error.message);
-//   }
+    next();
+  } catch (error) {
+    return res.send(error.message);
+  }
 };
 
 const criandoAcesso = async (req, res) => {
