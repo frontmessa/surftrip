@@ -29,7 +29,7 @@ const login = async (req, res) => {
       return res.send({ mensagem: "Email ou senha invalida" });
     }
 
-    const senhaValida = await bcrypt.compare(senha, usuario.senha);
+    const senhaValida = await bcrypt.compare(senha, usuario.rows[0].senha);
 
     if (!senhaValida) {
       return res.send({ mensagem: "Email ou senha invalida" });
