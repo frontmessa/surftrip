@@ -137,17 +137,35 @@
   </head>
   <body>
     <section class="background">
-      <form id="loginForm">
+      <form id="loginForm" method="post" action="/criandoAcesso">
         <h3>Registro</h3>
 
         <label for="nome">name</label>
-        <input type="text" placeholder="Email or Phone" id="username" />
+        <input
+          type="text"
+          name="nome"
+          class="input-field"
+          placeholder="Nome"
+          required
+        />
 
         <label for="email">email</label>
-        <input type="text" placeholder="Email or Phone" id="username" />
+        <input
+          type="email"
+          name="email"
+          class="input-field"
+          placeholder="Email"
+          required
+        />
 
         <label for="senha">Password</label>
-        <input type="password" placeholder="Password" id="password" />
+        <input
+          type="password"
+          name="senha"
+          class="input-field"
+          placeholder="senha"
+          required
+        />
 
         <button type="submit">Log In</button>
       </form>

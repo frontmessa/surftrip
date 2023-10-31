@@ -17,6 +17,6 @@ rotas.post("/login", login);
 
 rotas.get("/registros", getRegistros);
 
-rotas.post("/criadoAcesso", criandoAcesso);
+rotas.post("/criandoAcesso", criandoAcesso);
 
 module.exports = rotas;

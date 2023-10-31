@@ -5,8 +5,6 @@ const senhaJwt = require("./senhaJwt");
 const path = require("path");
 const { error } = require("console");
 
-
-
 const getRegistros = (req, res) => {
   pool.query(
     "SELECT nome, telefone, email, idade FROM registros",
@@ -21,16 +19,17 @@ const login = async (req, res) => {
   const { email, senha } = req.body;
 
   try {
-    const usuario = await pool.query("select * from login where email = $1", [
-      email,
-    ]);
+    const usuario = await pool.query(
+      "select email from login where email = $1",
+      [email]
+    );
     res.sendFile(path.join(__dirname, "public/login.html"));
 
     if (usuario.rowCount < 1) {
       return res.send({ mensagem: "Email ou senha invalida" });
     }
 
-    const senhaValida = await bcrypt.compare(senha, usuario.rows[0].senha);
+    const senhaValida = await bcrypt.compare(senha, usuario.senha);
 
     if (!senhaValida) {
       return res.send({ mensagem: "Email ou senha invalida" });
@@ -44,7 +43,6 @@ const login = async (req, res) => {
 
     return res.json({ usuario: usuarioLogado, token });
 
-    
     next();
   } catch (error) {
     return res.send(error.message);
@@ -55,20 +53,21 @@ const criandoAcesso = async (req, res) => {
   const { nome, email, senha } = req.body;
 
   try {
-    const senhaCriptografada = await bcrypt.hash(senha, 10);
+    const senhaCriptografada = bcrypt.hashSync(senha, 10);
 
     const resultado = await pool.query(
-      "INSERT INTO login (nome, email, senha) VALUES ($1, $2, $3) return *",
-      [nome, email, senhaCriptografada],
-      console.log(resultado)
+      "INSERT INTO login (nome, email, senha) VALUES ($1, $2, $3)",
+      [nome, email, senhaCriptografada]
+      //console.log(resultado)
     );
-    res.sendFile(path.join(__dirname, "public/criandoAcesso.html"));
+    return res.sendFile(path.join(__dirname, "public/criandoAcesso.html"));
   } catch (error) {
+    console.log(error.message);
     return res.send({ mensagem: "Erro interno do servidor" });
   }
 };
 const cadastroCliente = async (req, res) => {
-  const { nome, telefone, email, idade} = req.body;
+  const { nome, telefone, email, idade } = req.body;
 
   try {
     const resultado = await pool.query(
