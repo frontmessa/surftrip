@@ -20,10 +20,9 @@ const login = async (req, res) => {
 
   try {
     const usuario = await pool.query(
-      "select email from login where email = $1",
+      "SELECT email FROM login WHERE email = $1",
       [email]
     );
-    res.sendFile(path.join(__dirname, "public/login.html"));
 
     if (usuario.rowCount < 1) {
       return res.send({ mensagem: "Email ou senha invalida" });
@@ -34,7 +33,7 @@ const login = async (req, res) => {
     if (!senhaValida) {
       return res.send({ mensagem: "Email ou senha invalida" });
     }
-
+    res.sendFile(path.join(__dirname, "views/dash"));
     const token = jwt.sign({ id: usuario.rows[0].id }, senhaJwt, {
       expiresIn: "8h",
     });
@@ -42,10 +41,8 @@ const login = async (req, res) => {
     const { senha: _, ...usuarioLogado } = usuario.rows[0];
 
     return res.json({ usuario: usuarioLogado, token });
-
-    next();
   } catch (error) {
-    return res.send(error.message);
+    return res.json(error.message);
   }
 };
 
