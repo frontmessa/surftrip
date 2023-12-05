@@ -1,8 +1,0 @@
-create table registros (id serial primary key , nome text not null, telefone text not null, email text not null)
-
-create table login (
-	id serial primary key,
-  	nome text not null,
-  	email text not null unique,
-    senha text not null
-);
