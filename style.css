@@ -367,7 +367,7 @@ html {
 
 .hero {
 
-  background-image: url(./assets/images/peuAluna.jpeg);
+  background-image: url(/imagens/capa.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -503,6 +503,7 @@ iframe {
 
 
 
+
 /*-----------------------------------*\
  * #POPULAR
 \*-----------------------------------*/
@@ -565,6 +566,10 @@ iframe {
 .popular-card :is(.card-subtitle, .card-title) > a { color: inherit; }
 
 .popular .btn { margin-inline: auto; }
+
+.imgHistoria{
+  max-width: 100%;
+}
 
 
 
@@ -1204,6 +1209,12 @@ button:hover {
   .popular-list > li:not(:last-child) { margin-bottom: 0; }
 
   .popular-card .card-content { right: 20px; }
+  .historiaimg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
 
 
 
